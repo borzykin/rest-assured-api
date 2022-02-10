@@ -1,5 +1,6 @@
 package services;
 
+import com.google.gson.Gson;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -21,4 +22,5 @@ public class BaseService {
     protected static final ResponseSpecification responseSpec = new ResponseSpecBuilder()
             .log(LogDetail.ALL)
             .build();
+    protected static final Gson gson = new Gson();
 }

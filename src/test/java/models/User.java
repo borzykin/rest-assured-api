@@ -1,17 +1,15 @@
 package models;
 
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.util.function.Consumer;
+
+import static java.util.Objects.requireNonNull;
+
 @AllArgsConstructor
-@Setter
-@Getter
-@ToString
-@EqualsAndHashCode
+@Data
 @Accessors(chain = true)
 public class User {
     private String email;
@@ -19,8 +17,7 @@ public class User {
     private String id;
     private String token;
 
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public User(final Consumer<User> builder) {
+        requireNonNull(builder).accept(this);
     }
 }

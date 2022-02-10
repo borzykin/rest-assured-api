@@ -13,4 +13,13 @@ public interface EnvConfig extends Config {
 
     @Key("apiUrl")
     String getApiUrl();
+
+    @Key("registerPath")
+    String registerPath();
+
+    @Key("usersPath")
+    String usersPath();
+
+    @Key("userPath")
+    String userPath();
 }
